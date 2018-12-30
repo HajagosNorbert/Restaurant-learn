@@ -34,4 +34,4 @@ def login_google():
     except(TokenExpiredError):
         return redirect(url_for('google.login'))
 
-    return f'''You are {resp.json()['email'} on Google'''
+    return f'''You are {resp.json()['email']} on Google'''
