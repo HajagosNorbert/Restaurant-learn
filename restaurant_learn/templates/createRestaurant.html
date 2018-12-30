@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>Create new restaurant!</h1>
+    Name:<br>
+    <form action="{{ url_for('restaurant_bp.createRestaurant', restaurant_id = restaurant_id) }}" method="POST">
+      <input type="text" name="name">
+      <input type="submit" name="submit">
+    </form>
+{% endblock %}
+

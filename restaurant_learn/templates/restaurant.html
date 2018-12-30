@@ -1,0 +1,16 @@
+{% block body %}
+
+  <h1>{{ restaurant.name }}</h1>
+  <a href="{{ url_for('menu_item_bp.createMenuItem', restaurant_id = restaurant.id) }}">New menu item</a><br><br>
+
+  {% include 'messages.html' %}
+
+
+  {% for menu_item in menu_items %}
+    {{ menu_item.name }}<br>
+    {{ menu_item.price }}<br>
+    {{ menu_item.description }}<br>
+    <a href="{{ url_for('menu_item_bp.deleteMenuItem', restaurant_id = restaurant.id, menu_item_id = menu_item.id) }}">Delete</a><br>
+    <a href="{{ url_for('menu_item_bp.editMenuItem', restaurant_id = restaurant.id, menu_item_id = menu_item.id) }}">Edit</a><br><br>
+  {% endfor %}
+{% endblock %}

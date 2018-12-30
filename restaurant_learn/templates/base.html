@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  {% block additionalScripts %}{% endblock %}
+
+</head>
+
+<body>
+  <div><a href="{{ url_for('user_bp.login') }}">Login</a></div>
+  {% block body %}
+  {% endblock %}
+
+</body>
+
+</html>
